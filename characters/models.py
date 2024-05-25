@@ -26,7 +26,7 @@ class Characters(models.Model):
         default=GenderChoices.UNKNOWN,
         max_length=100,
     )
-    image = models.ImageField(upload_to="", max_length=255, unique=True)
+    image = models.URLField(max_length=1000, unique=True)
 
     class Meta:
         verbose_name_plural = "Characters"
