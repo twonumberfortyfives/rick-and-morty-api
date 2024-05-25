@@ -28,5 +28,9 @@ class Characters(models.Model):
     )
     image = models.ImageField(upload_to="", max_length=255, unique=True)
 
+    class Meta:
+        verbose_name_plural = "Characters"
+        verbose_name = "Character"
+
     def __str__(self):
         return self.name
