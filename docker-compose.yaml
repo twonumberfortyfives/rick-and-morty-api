@@ -16,7 +16,7 @@ services:
     ports:
       - "8000:8000"
     depends_on:
-      - pgdb
+      - my-postgres
       - redis
 
   celery:
@@ -35,13 +35,10 @@ services:
       - redis
 
 
-  pgdb:
-    image: postgres:alpine
-    container_name: pgdb
-    environment:
-      - POSTGRES_DB=postgres
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
+  my-postgres:
+    image: postgres
+    ports:
+      - "5432:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data/
 

@@ -80,8 +80,12 @@ WSGI_APPLICATION = "rick_and_morty_api.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "postgres",
+        "USER": "postgres",
+        "PASSWORD": "postgres",
+        "HOST": "my-postgres",
+        "PORT": "5432",
     }
 }
 
